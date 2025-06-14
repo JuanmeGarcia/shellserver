@@ -11,12 +11,28 @@ A simple Model Context Protocol (MCP) server that provides a terminal tool for e
 
 ## Installation
 
-1. Install dependencies:
+### Option 1: As a uv project (recommended for development)
+
+1. Initialize or add to your existing project:
 ```bash
-pip install mcp[cli]
+# For new projects
+uv init mcp-shell-server
+cd mcp-shell-server
+
+# Add the MCP dependency
+uv add mcp
 ```
 
-2. Install the server:
+2. Copy the server.py file to your project directory
+
+### Option 2: Install as a tool (recommended for end users)
+
+Install the MCP CLI tool:
+```bash
+uv tool install mcp
+```
+
+Then use the server directly:
 ```bash
 mcp install server.py
 ```
@@ -27,6 +43,10 @@ mcp install server.py
 
 Test the server with MCP Inspector:
 ```bash
+# If using uv project
+uv run mcp dev server.py
+
+# If using tool installation
 mcp dev server.py
 ```
 
@@ -34,6 +54,10 @@ mcp dev server.py
 
 Run the server directly:
 ```bash
+# If using uv project
+uv run python server.py
+
+# If using tool installation  
 python server.py
 ```
 
